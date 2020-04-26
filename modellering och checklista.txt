@@ -1,0 +1,33 @@
+
+
+X	Redovisning av modeller (innan db byggs)
+X	Säker databas, redovisas i ett dokument med den kod du använt för att bygga db
+	Användargränssnitt
+	Det ska finnas, redovisas med kod;
+        Minst 2 procedurer
+        Triggers
+X       Constraints	(PRIMARY KEY, FOREIGN KEY, NOT NULL & AUTO_INCREMENT)
+        Vyer
+        Frågor som innehåller join, group by, having m.m
+
+
+	
+
+
+filialer(#id, adress, namn, ort)
+utb(#id, namn)
+utb_x_filial(id, @filial_id, @utb_id, datum_start, datum_slut)
+kurser(#id, @utb_id, namn, antal_poang)
+filialer(#id, adress, namn, ort)
+elever(#id, namn)
+elev_x_kurs(@#elev_id, @#kurs_id, datum_gradering, gradering)
+anstallda(#id, @titel_id, namn)
+kurs_x_anstalld(@#kurs_id, @#anstalld_id, är_ansvarig_larare)
+yrkestitlar(#id, titel)
+
+
+i utb_x_filial, utb_x_kurs, elev_x_kurs blir alla 4 attribut primärnyckel om jag inte lägger till ett id. 
+och det är störigt att ha 4 primärnycklar, speciellt när 2 av dem är DATE.
+
+
+
